@@ -3,15 +3,21 @@ if (typeof define !== 'function') { var define = require('amdefine')(module); }
 define(function() {
   return {
     indexOf : function(arr, item) {
+        return arr.indexOf(item)
 
     },
 
     sum : function(arr) {
-
+        var sum = 0;
+        for (var i = arr.length - 1; i >= 0; i--) {
+           sum += arr[i];
+        };
+        return sum;
     },
 
     remove : function(arr, item) {
 
+         arr.splice(item,1);
     },
 
     removeWithoutCopy : function(arr, item) {
