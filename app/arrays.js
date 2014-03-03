@@ -16,23 +16,34 @@ define(function() {
     },
 
     remove : function(arr, item) {
+        for (var i in arr){
+           if (arr[i]===item){
+            arr.splice(i,1);
+           }
+        }
 
-         arr.splice(item,1);
+            return arr; //not sure how I go this though.
     },
 
-    removeWithoutCopy : function(arr, item) {
 
+    removeWithoutCopy : function(arr, item) {
+            //no clue. Well I have a sort one.
+            //arr.splice(i,2)??
     },
 
     append : function(arr, item) {
-
+         arr.push(item);
+         return arr;
     },
 
     truncate : function(arr) {
-
+        arr.pop();
+        return arr;
     },
 
     prepend : function(arr, item) {
+         arr.unshift(item);
+         return arr;
 
     },
 
