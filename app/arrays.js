@@ -27,6 +27,16 @@ define(function() {
 
 
     removeWithoutCopy : function(arr, item) {
+            var i,z;
+            for (i = 0, z = arr.length; i < z; i++) {
+                if (arr[i] === item){
+                    arr.splice(i,1);
+                    i = i - 1;
+                    z = z -1;
+                }
+
+            };
+                    return arr;
             //no clue. Well I have a sort one.
             //arr.splice(i,2)??
     },
@@ -48,19 +58,30 @@ define(function() {
     },
 
     curtail : function(arr) {
-
+        arr.splice(0,1);
+        return arr;
     },
 
     concat : function(arr1, arr2) {
+        var arr3 = arr1.concat(arr2);
+        return arr3;
 
     },
 
     insert : function(arr, item, index) {
+            arr.splice(index,0,item);
+            return arr;
 
     },
 
     count : function(arr, item) {
-
+            var count = 0;
+            var index = arr.indexOf(item);
+            while (index != -1){
+                count ++;
+                index = arr.indexOf(item, index + 1);
+            }
+            return count;
     },
 
     duplicates : function(arr) {
