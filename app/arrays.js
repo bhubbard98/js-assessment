@@ -85,6 +85,16 @@ define(function() {
     },
 
     duplicates : function(arr) {
+        var arr2 = [];
+        for (var i = 0; i < arr.length; i++) {
+            var val = arr[i];
+               for (var j = i +1 ; j < arr.length; j++) {
+                   if (val === arr[j] && arr2.indexOf(arr[j])===-1){
+                     arr2.push(arr[i]);
+                   }
+               };
+        };
+        return arr2;
 
     },
 
